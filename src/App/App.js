@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 //import './';
-//import  from './';
+import Header from '../Header/Header';
+import SearchForm from '../SearchForm/SearchForm'
 
 class App extends Component {
 
@@ -14,7 +15,8 @@ class App extends Component {
   render() {
     return(
       <div className='container'>
-         
+         <Header/>
+         <SearchForm/>
       </div>
     );
   }
