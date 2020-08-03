@@ -8,17 +8,44 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      
+      items: [],
+
+      loading: false,
+
     };
   }
+  componentDidMount(){
+    fetch('https://swapi-thinkful.herokuapp.com/api/') 
+      .then(res => res.json())
+      .then(items=>{ 
+        this.setState({
+          loading: true,
+          items: items,
+        })
+     });
+  }
+
 
   render() {
-    return(
-      <div className='container'>
-         <Header/>
-         <SearchForm/>
-      </div>
-    );
+
+    let { loading, items } = this.state;
+    if (!loading){
+      return <div>Loading...</div>
+    }
+    else {
+ console.log(this.state.items);
+
+      return (
+       
+        <div className ='App'>
+          <Header/>
+          <SearchForm/>
+        </div>
+
+
+
+      );
+    }
   }
 }
 

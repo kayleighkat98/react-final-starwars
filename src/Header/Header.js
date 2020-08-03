@@ -14,7 +14,7 @@ class Header extends Component {
     render() {
         return(
             <div className='container'>
-               <h1>The Only Star Wars DataBase You Will Ever Need</h1>
+               <h1>The Only Star Wars Data-Base You Will Ever Need</h1>
             </div>
         );
     }
