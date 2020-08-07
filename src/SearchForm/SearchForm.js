@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 //import './';
 //import  from './';
-
+import {Link} from 'react-router-dom';
+//import ResultsPage from '../ResultsPage/ResultsPage'
 class SearchForm extends Component {
 
     render() {
@@ -17,7 +18,11 @@ class SearchForm extends Component {
                     type='text'
                     placeholder='Name'
                 />
-                <button>Search</button>
+                <Link exact to="/results/" >
+                   <button type="submit" >
+                       Search
+                   </button>
+               </Link>
             </form>
             </div>
         );

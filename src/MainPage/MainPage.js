@@ -3,6 +3,7 @@ import './MainPage.css';
 import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
 
+
 class MainPage extends Component {
 
     // constructor(props) {
@@ -17,6 +18,7 @@ class MainPage extends Component {
             <div className='container'>
                <Header/>
                <SearchForm/>
+
             </div>
         );
     }
