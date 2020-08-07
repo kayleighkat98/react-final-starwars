@@ -46,7 +46,7 @@ class App extends Component {
           <Route path ="/results/:item" component={ItemPage}/>
         </Router>
       );
-    }
+    } 
   }
 }
 
