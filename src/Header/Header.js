@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 //import './';
 //import  from './';
 
@@ -13,9 +14,9 @@ class Header extends Component {
 
     render() {
         return(
-            <div className='container'>
+            <Link exact to="/">
                <h1>The Only Star Wars Data-Base You Will Ever Need</h1>
-            </div>
+            </Link>
         );
     }
 }
