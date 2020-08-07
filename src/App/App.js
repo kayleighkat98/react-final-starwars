@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 //import './';
 
 import MainPage from '../MainPage/MainPage';
-import SearchPage from '../SearchPage/SearchPage';
-import ResultPage from '../ResultPage/ResultPage';
+import ResultsPage from '../ResultsPage/ResultsPage';
+import ItemPage from '../ItemPage/ItemPage';
 
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 class App extends Component {
 
@@ -37,13 +37,13 @@ class App extends Component {
       return <div>Loading...</div>
     }
     else {
-      console.log(this.state.items);
+      console.log(items);
 
       return (
         <Router>
           <Route exact path ="/" component={MainPage}/>
-          <Route path ="/search/" component={SearchPage} />
-          <Route path ="/result/" component={ResultPage}/>
+          <Route exact path ="/results/" component={ResultsPage} />
+          <Route path ="/results/:item" component={ItemPage}/>
         </Router>
       );
     }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import './ResultPage.css';
+import './ItemPage.css';
 import Header  from '../Header/Header';
 
-class ResultPage extends Component {
+class ItemPage extends Component {
 
     // constructor(props) {
     //     super(props)
@@ -15,11 +15,11 @@ class ResultPage extends Component {
         return(
             <div className='container'>
                 <Header/>
-               <h2>Results Page</h2>
+               <h2>Item Page</h2>
                 <p>This is the Page that displays the chosen result</p>
             </div>
         );
     }
 }
 
-export default ResultPage
+export default ItemPage

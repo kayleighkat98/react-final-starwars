@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import './SearchPage.css';
+import './ResultsPage.css';
 import SearchForm from '../SearchForm/SearchForm';
 import Header from '../Header/Header';
 
-class SearchPage extends Component {
+class ResultsPage extends Component {
 
     // constructor(props) {
     //     super(props)
@@ -23,4 +23,4 @@ class SearchPage extends Component {
     }
 }
 
-export default SearchPage
+export default ResultsPage
