@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 //import './';
-import Header from '../Header/Header';
-import SearchForm from '../SearchForm/SearchForm'
+
+import MainPage from '../MainPage/MainPage';
+import SearchPage from '../SearchPage/SearchPage';
+import ResultPage from '../ResultPage/ResultPage';
+
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 class App extends Component {
 
@@ -33,17 +37,14 @@ class App extends Component {
       return <div>Loading...</div>
     }
     else {
- console.log(this.state.items);
+      console.log(this.state.items);
 
       return (
-       
-        <div className ='App'>
-          <Header/>
-          <SearchForm/>
-        </div>
-
-
-
+        <Router>
+          <Route exact path ="/" component={MainPage}/>
+          <Route path ="/search/" component={SearchPage} />
+          <Route path ="/result/" component={ResultPage}/>
+        </Router>
       );
     }
   }

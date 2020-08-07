@@ -2,5 +2,13 @@ import React from 'react';
 import ReactDom from  'react-dom';
 import './index.css';
 import App from './App/App';
+import {BrowserRouter} from 'react-router-dom';
 
-ReactDom.render(<App />, document.getElementById('root'));
+ReactDom.render(
+
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
+    
+    document.getElementById('root')
+);
