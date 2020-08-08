@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 class SearchForm extends Component {
 
     render() {
-
+        console.log('test',this.props.categories)
         return(
             <div className='container'>
        
