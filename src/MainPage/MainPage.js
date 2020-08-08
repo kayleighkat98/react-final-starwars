@@ -12,30 +12,35 @@ class MainPage extends Component {
           baseUrl:'https://swapi-thinkful.herokuapp.com/api/',
     
           categories: [],
-    
-          loading: false,
-    
+          categoryNames:[],
+
+
+          loading: false
         };
       }
 
       async componentDidMount(){
         const response= await fetch(this.state.baseUrl);
         const data = await response.json();
+        const categoryNames = Object.entries(await data).map((item,i)=>(
+            item[0]
+        ))
         this.setState({
             loading: true,
             categories: Object.entries(data),
+            categoryNames: categoryNames,
         })
     }
     
 
     render() {
-        
-        let { loading, categories } = this.state;
+        console.log('test',this.state.categoryNames)
+        let { loading } = this.state;
         if (!loading){
         return <div>Loading...</div>
         }
         else {
-        console.log(categories[0]);
+
 
             return(
                 <div className='container'>

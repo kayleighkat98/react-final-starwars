@@ -6,8 +6,18 @@ import {Link} from 'react-router-dom';
 class SearchForm extends Component {
 
     render() {
-        console.log('test',this.props.categories)
+
+        
+        console.log(this.props.categories);
+        // let categoryNames = categories.map(function(item, i){
+            
+        //     let name= item[i][0];
+        //     return<li key={i}>{name}</li>
+        // });
+        // console.log('test',categoryNames);
+        //  console.log(categories);
         return(
+            
             <div className='container'>
        
             <form>
