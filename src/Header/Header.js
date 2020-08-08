@@ -14,7 +14,7 @@ class Header extends Component {
 
     render() {
         return(
-            <Link exact to="/">
+            <Link to="/">
                <h1>The Only Star Wars Data-Base You Will Ever Need</h1>
             </Link>
         );

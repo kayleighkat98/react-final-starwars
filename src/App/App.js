@@ -5,13 +5,15 @@ import MainPage from '../MainPage/MainPage';
 import ResultsPage from '../ResultsPage/ResultsPage';
 import ItemPage from '../ItemPage/ItemPage';
 
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route ,Switch} from 'react-router-dom';
 
 class App extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
+      baseUrl:'https://swapi-thinkful.herokuapp.com/api/',
+
       items: [],
 
       loading: false,
@@ -19,12 +21,13 @@ class App extends Component {
     };
   }
   componentDidMount(){
-    fetch('https://swapi-thinkful.herokuapp.com/api/') 
+    fetch(this.state.baseUrl) 
       .then(res => res.json())
-      .then(items=>{ 
+      .then(data=>{ 
+        console.log(Object.entries(data))
         this.setState({
           loading: true,
-          items: items,
+          categories: Object.entries(data),
         })
      });
   }
@@ -32,21 +35,23 @@ class App extends Component {
 
   render() {
 
-    let { loading, items } = this.state;
+    let { loading, categories } = this.state;
     if (!loading){
       return <div>Loading...</div>
     }
     else {
-      console.log(items);
+      console.log(categories[0][0]);
 
       return (
         <Router>
-          <Route exact path ="/" component={MainPage}/>
-          <Route exact path ="/results/" component={ResultsPage} />
-          <Route path ="/results/:item" component={ItemPage}/>
+          <Switch>
+            <Route exact path ="/" component={MainPage}/>
+            <Route exact path ="/results/" component={ResultsPage} />
+            <Route path ="/results/:item" component={ItemPage}/>
+          </Switch>
         </Router>
       );
-    } 
+    }
   }
 }
 

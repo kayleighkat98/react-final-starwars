@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 class SearchForm extends Component {
 
     render() {
+
         return(
             <div className='container'>
        
@@ -18,7 +19,7 @@ class SearchForm extends Component {
                     type='text'
                     placeholder='Name'
                 />
-                <Link exact to="/results/" >
+                <Link to="/results/" >
                    <button type="submit" >
                        Search
                    </button>
