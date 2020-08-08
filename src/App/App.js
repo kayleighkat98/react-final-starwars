@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       baseUrl:'https://swapi-thinkful.herokuapp.com/api/',
 
-      items: [],
+      categories: [],
 
       loading: false,
 
@@ -29,7 +29,7 @@ class App extends Component {
           loading: true,
           categories: Object.entries(data),
         })
-     });
+     })
   }
 
 
@@ -40,14 +40,20 @@ class App extends Component {
       return <div>Loading...</div>
     }
     else {
-      console.log(categories[0][0]);
+      console.log(categories[0]);
 
       return (
         <Router>
           <Switch>
-            <Route exact path ="/" component={MainPage}/>
-            <Route exact path ="/results/" component={ResultsPage} />
-            <Route path ="/results/:item" component={ItemPage}/>
+            <Route exact path ="/">
+              <MainPage/>
+            </Route>
+            <Route exact path ="/results/">
+              <ResultsPage/>
+            </Route> 
+            <Route path ="/results/:item">
+              <ItemPage/>
+            </Route> 
           </Switch>
         </Router>
       );
